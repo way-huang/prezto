@@ -2,12 +2,18 @@
 # Executes commands at the start of an interactive session.
 #
 # Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Way Huang <way.h@outlook.com>
 #
 
+# Prezto Install Dir
+PREZTO_INSTALL_DIR="/usr/local/share/zprezto"
+if [[ "$OSTYPE" != darwin* ]]; then
+  PREZTO_INSTALL_DIR="${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+if [[ -s "${PREZTO_INSTALL_DIR}/init.zsh" ]]; then
+  source "${PREZTO_INSTALL_DIR}/init.zsh"
 fi
 
 # Customize to your needs...
